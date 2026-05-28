@@ -45,6 +45,7 @@ const handleSubmit = () => {
           <title>User Details Form</title>
       </head>
       <body>
+        <div>
           <h1>User Details Form</h1>
           <form id = "userform" @submit.prevent="handleSubmit">
               <fieldset>
@@ -92,6 +93,7 @@ const handleSubmit = () => {
                   </div>
               </fieldset>
           </form>
+        </div>
       </body>
   </html>
 </template>
@@ -104,7 +106,8 @@ label {
 }
 
 body {
-    display: inline-flexbox
+    display: inline-flexbox;
+    margin: 0 auto;
 }
 
 h1 {
@@ -175,5 +178,19 @@ button:hover {
 
 body {
     background-color: #064179;
+    margin: 0 auto;
 }
+
+.positionCenter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+html {
+    background-color: #064179;
+    min-height:100vh;
+}
+
 </style>

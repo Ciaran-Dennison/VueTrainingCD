@@ -1,17 +1,28 @@
 <script setup lang="ts">
-import UserForm from "./components/UserForm.vue";
-import EmployeeTable from "./components/EmployeeTable.vue"
-import Homepage from "./components/Homepage.vue";
-import image from "./images/audacia_academy_logo.jpg"
+
 </script>
 
 
 
 <template>
-<Homepage/>
-<UserForm/>
-<EmployeeTable/>
+    <nav>
+        <router-link to="/">Home</router-link> |
+        <router-link to="/UserForm">User Form</router-link> |
+        <router-link to="/EmployeeTable">Employee Table</router-link>       
+    </nav>
+
+    <router-view/>
 </template>
 
 <style scoped>
+
+nav{
+    background-color: #74a2cf;
+    text-align: center;
+}
+
+html {
+    background-color: #064179;
+    min-height: 100vh;
+}
 </style>

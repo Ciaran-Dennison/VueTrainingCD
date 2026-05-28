@@ -79,6 +79,7 @@ const getSalaries = () => {
             <link rel="stylesheet" type="text/css" href="EmployeeTable.css"/>
         </head>
         <body>
+            <div class="positionCenter">
             <table border="1">
                 <thead>
                     <th colspan="7">Employee Details</th>
@@ -115,35 +116,52 @@ const getSalaries = () => {
                     </tr>
                 </tfoot>
             </table>
-            <div> 
+            <div class="pagination"> 
             <button @click="prevPage" :disabled="currentPage === 1">Previous</button>
+            <span class="paginationText">Page: {{ currentPage }} of {{ totalPages }}</span>
             <button @click="nextPage" :disabled="currentPage === totalPages">Next</button>    
             </div>
-        </body>
+            </div>
+            </body>
     </html>
 </template>
 
 <style scoped>
 body {
     background-color: #064179;
+    margin: 0 auto;
 }
 
 table{
     background-color: white;
     margin: auto;
-    margin-top: 15%;
+}
+
+.positionCenter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 button {
-    display: flex;
+    display: inline-flexbox;
     align-items: center;
     justify-content: center;
-    margin: auto;
     background-color: white;
     border-color: grey;
     border-radius: 10px;
-    height: 100px;
+    height: 30px;
     width: 100px;
+    margin: auto;
+}
+
+.pagination {
+    text-align: center;
+}
+
+.paginationText {
+    color: white;
 }
 
 button:hover {
@@ -152,6 +170,11 @@ button:hover {
 
 button:focus {
     background-color: grey;
+}
+
+html {
+    background-color: #064179;
+    min-height:100vh;
 }
 
 </style>

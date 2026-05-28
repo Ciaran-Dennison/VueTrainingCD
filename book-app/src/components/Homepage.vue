@@ -11,16 +11,7 @@
     </head>
     <body>
         <div>
-        <img src="@/images/audacia_academy_logo.jpg" alt="Academy Logo" width="450" height="300">
-        </div>
-        <div>
-        <button alert="Add view here for User Form">User Form</button>
-        </div>
-        <br>
-        <br>
-        <br>
-        <div>
-        <button alert="Add view here for Employee Table">Employee Table</button>
+        <img src="@/images/audacia_academy_logo.jpg" alt="Academy Logo" width="450" height="300" class="positionCenter">
         </div>
     </body>
 </html>
@@ -39,23 +30,18 @@ img {
 
 body {
     background-color: #064179;
+    margin: 0 auto;
 }
 
-button {
-    display: block;
-    margin: auto;
-    background-color: white;
-    border-color: grey;
-    border-radius: 10px;
-    height: 100px;
-    width: 100px;
+.positionCenter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
-button:hover {
-    background-color: lightgrey;
-}
-
-button:focus {
-    background-color: grey;
+html {
+    background-color: #064179;
+    min-height: 100vh;
 }
 </style>
