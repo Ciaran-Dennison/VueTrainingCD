@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import EmployeeTableData from '@/assets/EmployeeTableData.vue';
 
 const employees = ref([
     {id: "001", fname: "John", sname: "Doe", birthdate: "01/01/2000", startdate: "13/05/2026", role: "Test Engineer", salary: "40000"},
