@@ -133,4 +133,25 @@ table{
     margin: auto;
     margin-top: 15%;
 }
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background-color: white;
+    border-color: grey;
+    border-radius: 10px;
+    height: 100px;
+    width: 100px;
+}
+
+button:hover {
+    background-color: lightgrey;
+}
+
+button:focus {
+    background-color: grey;
+}
+
 </style>
