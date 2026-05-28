@@ -67,15 +67,15 @@ const handleSubmit = () => {
                   <div>
                       <label for="email">Email</label> </br> <input class="grey-background" type="email" id="email" v-model="form.email"/>
                       </br>
-                      <label for="username">Username</label> </br> <input class="grey-background" type="text" id="username" v-model="username"/>
+                      <label for="username">Username</label> </br> <input class="grey-background" type="text" id="username" v-model="form.username"/>
                       
                   </div>
                   <div>
-                      <label for="address1">Address Line 1</label> </br> <input class="grey-background" type="text" id="address1" v-model="address1"/>
+                      <label for="address1">Address Line 1</label> </br> <input class="grey-background" type="text" id="address1" v-model="form.address1"/>
                       </br>
-                      <label for="address2">Address Line 2</label> </br> <input class="grey-background" type="text" id="address2" v-model="address2"/>
+                      <label for="address2">Address Line 2</label> </br> <input class="grey-background" type="text" id="address2" v-model="form.address2"/>
                       </br>
-                      <label for="address3">Address Line 3</label> </br> <input class="grey-background" type="text" id="address3" v-model="address3"/>
+                      <label for="address3">Address Line 3</label> </br> <input class="grey-background" type="text" id="address3" v-model="form.address3"/>
                   </div>
                   <div>
                       <label for="city">City/Town</label> </br> <input class="grey-background" type="text" id="city" v-model="form.city"/>  
