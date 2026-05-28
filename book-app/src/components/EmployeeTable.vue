@@ -1,19 +1,38 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import EmployeeTableData from '@/assets/EmployeeTableData.vue';
 
-const employees = ref([
-    {id: "001", fname: "John", sname: "Doe", birthdate: "01/01/2000", startdate: "13/05/2026", role: "Test Engineer", salary: "40000"},
-    {id: "002", fname: "Jane", sname: "Doe", birthdate: "31/12/2000", startdate: "03/03/2021", role: "Software Engineer", salary: "45000"},
-    {id: "003", fname: "Smithers", sname: "Smitherson", birthdate: "12/05/1967", startdate: "15/07/1998", role: "Delivery Manager", salary: "75000"},
-    {id: "004", fname: "Katie", sname: "Roche", birthdate: "01/12/2005", startdate: "18/05/2029", role: "Marketing", salary: "34000"},
-    {id: "005", fname: "Ben", sname: "Steel", birthdate: "21/12/1989", startdate: "23/02/2015", role: "TechOps", salary: "45000"},
-    {id: "006", fname: "Jim", sname: "Jimbo", birthdate: "31/12/1999", startdate: "03/12/2010", role: "Marketing", salary: "46000"},
-    {id: "007", fname: "Sally", sname: "Salsberg", birthdate: "15/02/2007", startdate: "13/06/2025", role: "Solutions Architect", salary: "60000"},
-    {id: "008", fname: "Harry", sname: "Harrison", birthdate: "17/10/1976", startdate: "04/07/2000", role: "Software Engineer", salary: "55000"},
-    {id: "009", fname: "Jenny", sname: "Jenson", birthdate: "30/08/1954", startdate: "12/09/2005", role: "Test Engineer", salary: "40000"},
-    {id: "010", fname: "Bob", sname: "Boberts", birthdate: "04/01/1995", startdate: "19/01/2012", role: "Software Engineer", salary: "50000"}
-]);
+class employee {
+    id:string;
+    fName:string;
+    sName:string;
+    birthDate:string;
+    startDate:string;
+    role:string;
+    salary:string;
+
+    constructor(id:string, fName:string, sName:string, birthDate:string, startDate:string, role:string, salary:string) {
+        this.id = id;
+        this.fName = fName;
+        this.sName = sName;
+        this.birthDate = birthDate;
+        this.startDate = startDate;
+        this.role = role;
+        this.salary = salary;
+    };
+};
+
+const emp1 = new employee("001", "John", "Doe", "01/01/2000", "13/05/2026", "Test Engineer", "40000");
+const emp2 = new employee("002", "Jane", "Doe", "31/12/2000", "03/03/2021", "Software Engineer", "45000");
+const emp3 = new employee("003", "Smithers", "Smitherson", "12/05/1967", "15/07/1998", "Delivery Manager", "75000");
+const emp4 = new employee("004", "Katie", "Roche", "01/12/2005", "18/05/2029", "Marketing", "34000");
+const emp5 = new employee("005", "Ben", "Steel", "21/12/1989", "23/02/2015", "TechOps", "45000");
+const emp6 = new employee("006", "Jim", "Jimbo", "31/12/1999", "03/12/2010", "Marketing", "46000");
+const emp7 = new employee("007", "Sally", "Salsberg", "15/02/2007", "13/06/2025", "Solutions Architect", "60000");
+const emp8 = new employee("008", "Harry", "Harrison", "17/10/1976", "04/07/2000", "Software Engineer", "55000");
+const emp9 = new employee("009", "Jenny", "Jenson", "30/08/1954", "12/09/2005", "Test Engineer", "40000");
+const emp10 = new employee("010", "Bob", "Boberts", "04/01/1995", "19/01/2012", "Software Engineer", "50000");
+
+const employees = ref([emp1,emp2,emp3,emp4,emp5,emp6,emp7,emp8,emp9,emp10]);
 
 const currentPage = ref(1);
 const itemsPerPage = ref(5);
@@ -53,6 +72,7 @@ const getSalaries = () => {
 
 
 <template>
+    <EmployeeTableData/>
     <html>
         <head>
             <title>Employee Table</title>
@@ -75,10 +95,10 @@ const getSalaries = () => {
                 <tbody>
                     <tr v-for="item in paginatedData" :key="item.id">
                         <td>{{ item.id }}</td>
-                        <td>{{ item.fname }}</td>
-                        <td>{{ item.sname }}</td>
-                        <td>{{ item.birthdate }}</td>
-                        <td>{{ item.startdate }}</td>
+                        <td>{{ item.fName }}</td>
+                        <td>{{ item.sName }}</td>
+                        <td>{{ item.birthDate }}</td>
+                        <td>{{ item.startDate }}</td>
                         <td>{{ item.role }}</td>
                         <td>{{ item.salary }}</td>
                     </tr>
