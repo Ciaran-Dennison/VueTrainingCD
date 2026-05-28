@@ -46,53 +46,57 @@ const handleSubmit = () => {
       </head>
       <body>
         <div>
-          <h1>User Details Form</h1>
-          <form id = "userform" @submit.prevent="handleSubmit">
-              <fieldset>
-                  <div>
-                      <label for="firstname">First Name</label> </br> <input class="grey-background" type="text" id="firstname" v-model="form.firstname"/>
-                      </br>
-                      <label for="lastname">Last Name</label> </br> <input class="grey-background" type="text" id="lastname" v-model="form.lastname"/>
-                      </br>
-                      <label for="birthdate">Date of Birth</label> </br> <input class="grey-background" type="date" id="birthdate" v-model="form.birthdate"/>
-                      </br>
-                      <label for="colour">Eye Colour</label> <br> <select class="grey-background" id="colour" v-model="form.eye_colour">
-                          <option value="Blue">Blue</option>
-                          <option value="Green">Green</option>
-                          <option value="Brown">Brown</option>
-                          <option value="Hazel">Hazel</option>
-                          <option value="Grey">Grey</option>
-                          <option value="Red">Red</option>
-                      </select>
-                  </div>
-                  <div>
-                      <label for="email">Email</label> </br> <input class="grey-background" type="email" id="email" v-model="form.email"/>
-                      </br>
-                      <label for="username">Username</label> </br> <input class="grey-background" type="text" id="username" v-model="form.username"/>
-                      
-                  </div>
-                  <div>
-                      <label for="address1">Address Line 1</label> </br> <input class="grey-background" type="text" id="address1" v-model="form.address1"/>
-                      </br>
-                      <label for="address2">Address Line 2</label> </br> <input class="grey-background" type="text" id="address2" v-model="form.address2"/>
-                      </br>
-                      <label for="address3">Address Line 3</label> </br> <input class="grey-background" type="text" id="address3" v-model="form.address3"/>
-                  </div>
-                  <div>
-                      <label for="city">City/Town</label> </br> <input class="grey-background" type="text" id="city" v-model="form.city"/>  
-                      </br>
-                      <label for="county">County</label> </br> <input class="grey-background" type="text" id="county" v-model="form.county"/> 
-                      </br>
-                      <label for="postcode">Postcode</label> </br> <input class="grey-background" type="text" id="postcode" v-model="form.postcode"/>
-                  </div>
-                  <div>
-                      <label for="phone">Phone Number</label> </br> <input class="grey-background" type="number" id="phone" v-model="form.phone"/>
-                  </div>
-                  <div>
-                      <button type="submit">Submit</button>
-                  </div>
-              </fieldset>
-          </form>
+            <div class="headerFormat">
+                <h1>User Details Form</h1>
+            </div>
+            <div class="positionCenter">
+                <form id = "userform" @submit.prevent="handleSubmit">
+                    <fieldset>
+                        <div>
+                            <label for="firstname">First Name</label> </br> <input class="grey-background" type="text" id="firstname" v-model="form.firstname"/>
+                            </br>
+                            <label for="lastname">Last Name</label> </br> <input class="grey-background" type="text" id="lastname" v-model="form.lastname"/>
+                            </br>
+                            <label for="birthdate">Date of Birth</label> </br> <input class="grey-background" type="date" id="birthdate" v-model="form.birthdate"/>
+                            </br>
+                            <label for="colour">Eye Colour</label> <br> <select class="grey-background" id="colour" v-model="form.eye_colour">
+                                <option value="Blue">Blue</option>
+                                <option value="Green">Green</option>
+                                <option value="Brown">Brown</option>
+                                <option value="Hazel">Hazel</option>
+                                <option value="Grey">Grey</option>
+                                <option value="Red">Red</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="email">Email</label> </br> <input class="grey-background" type="email" id="email" v-model="form.email"/>
+                            </br>
+                            <label for="username">Username</label> </br> <input class="grey-background" type="text" id="username" v-model="form.username"/>
+                            
+                        </div>
+                        <div>
+                            <label for="address1">Address Line 1</label> </br> <input class="grey-background" type="text" id="address1" v-model="form.address1"/>
+                            </br>
+                            <label for="address2">Address Line 2</label> </br> <input class="grey-background" type="text" id="address2" v-model="form.address2"/>
+                            </br>
+                            <label for="address3">Address Line 3</label> </br> <input class="grey-background" type="text" id="address3" v-model="form.address3"/>
+                        </div>
+                        <div>
+                            <label for="city">City/Town</label> </br> <input class="grey-background" type="text" id="city" v-model="form.city"/>  
+                            </br>
+                            <label for="county">County</label> </br> <input class="grey-background" type="text" id="county" v-model="form.county"/> 
+                            </br>
+                            <label for="postcode">Postcode</label> </br> <input class="grey-background" type="text" id="postcode" v-model="form.postcode"/>
+                        </div>
+                        <div>
+                            <label for="phone">Phone Number</label> </br> <input class="grey-background" type="number" id="phone" v-model="form.phone"/>
+                        </div>
+                        <div>
+                            <button type="submit">Submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
         </div>
       </body>
   </html>
@@ -179,6 +183,13 @@ button:hover {
 body {
     background-color: #064179;
     margin: 0 auto;
+}
+
+.headerFormat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 .positionCenter{
