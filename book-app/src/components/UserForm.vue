@@ -31,7 +31,7 @@ const handleSubmit = () => {
   let county = form.value.county;
   let postcode = form.value.postcode;
   let phone = form.value.phone;
-  ("Form Submitted" + fname + sname + bday + colour + email + username + add1 + add2 + add3 + city + county + postcode + phone);
+  console.log(fname + " " + sname + " " + bday + " " + colour + " " + email + " " + username + " " + add1 + " " + add2 + " " + add3 + " " + city + " " + county + " " + postcode + " " + phone)
   alert(fname + " " + sname + " " + bday + " " + colour + " " + email + " " + username + " " + add1 + " " + add2 + " " + add3 + " " + city + " " + county + " " + postcode + " " + phone)
 }
 
@@ -46,7 +46,6 @@ const handleSubmit = () => {
       </head>
       <body>
           <h1>User Details Form</h1>
-          <!-- <action="/submit" method="post"-->
           <form id = "userform" @submit.prevent="handleSubmit">
               <fieldset>
                   <div>
