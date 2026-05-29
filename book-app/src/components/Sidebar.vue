@@ -52,6 +52,7 @@ const isCollapsed = ref(false);
   padding: 1rem;
   display: flex;
   justify-content: space-between;
+  text-align: center;
   align-items: center;
 }
 

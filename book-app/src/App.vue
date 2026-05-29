@@ -22,9 +22,9 @@ function toggleSidebar() {
             </div>
             </router-view>
         </button> |
-        <button><router-link to="/">Home</router-link></button> |
-        <button><router-link to="/UserForm">User Form</router-link></button> |
-        <button><router-link to="/EmployeeTable">Employee Table</router-link></button>
+        <button><router-link to="/" class="link">Home</router-link></button> |
+        <button><router-link to="/UserForm" class="link">User Form</router-link></button> |
+        <button><router-link to="/EmployeeTable" class="link">Employee Table</router-link></button>
     </nav>
     <div class="layout">
         <aside v-if="sidebarOpen" class="sidebar">
@@ -102,6 +102,26 @@ button {
 .mainView {
     flex: 1;
     min-width: 0;
+}
+
+.link:link {
+    color: #333;
+    text-decoration: none;
+}
+
+.link:visited {
+    color: #333;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.link:active {
+    color: #646464;
+    text-decoration: none;
 }
 
 </style>
