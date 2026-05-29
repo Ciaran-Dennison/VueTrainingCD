@@ -186,10 +186,9 @@ body {
 }
 
 .headerFormat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .positionCenter{
