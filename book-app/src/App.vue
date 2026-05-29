@@ -21,14 +21,16 @@ function toggleSidebar() {
                 <div class="bar3"></div>
             </div>
             </router-view>
-        </button> |
-        <button><router-link to="/" class="link">Home</router-link></button> |
-        <button><router-link to="/UserForm" class="link">User Form</router-link></button> |
+        </button>
+        <button><router-link to="/" class="link">Home</router-link></button>
+        <button><router-link to="/UserForm" class="link">User Form</router-link></button>
         <button><router-link to="/EmployeeTable" class="link">Employee Table</router-link></button>
     </nav>
     <div class="layout">
         <aside v-if="sidebarOpen" class="sidebar">
-            <router-view name="sidebar" />
+            <div class="sidebar">    
+                <router-view name="sidebar" />
+            </div>
         </aside>
         <main class="mainView">
             <router-view />
@@ -40,8 +42,9 @@ function toggleSidebar() {
 
 <style scoped>
 
+
 nav{
-    background-color: #74a2cf;
+    background-color: #3068a0;
 }
 
 html {
@@ -55,10 +58,8 @@ button {
     justify-content: center;
     background-color: white;
     border-color: grey;
-    border-radius: 10px;
-    height: 30px;
+    height: 38px;
     width: fit-content;
-    margin: auto;
 }
 
 .container {
@@ -80,18 +81,10 @@ button {
     vertical-align: middle;
 }
 
-.content{
-    display:flex;
-}
-
-.content main {
-  flex: 1;
-  margin-left: 10px;
-}
-
 .sidebar {
-    width:260px;
-    flex-shrink: 0;
+    box-shadow: 5px 0 6px -2px #333;
+    z-index: 1;
+    width: max-content;
 }
 
 .layout {
