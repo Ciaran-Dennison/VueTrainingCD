@@ -7,6 +7,8 @@ function toggleSidebar() {
     sidebarOpen.value = !sidebarOpen.value
 }
 
+
+
 </script>
 
 
