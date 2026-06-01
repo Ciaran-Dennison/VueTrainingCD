@@ -7,9 +7,11 @@ function timeoutFunc() {
   timeoutVar = setTimeout(showPage, 3000);
 }
 function showPage() {
-  document.getElementById("loader").style.display = "none";
-  document.getElementById("sidebarDiv").style.display = "block";
+  document.getElementById("loader")!.style.display = "none";
+  document.getElementById("sidebarDiv")!.style.display = "block";
 }
+
+
 
 
 </script>
