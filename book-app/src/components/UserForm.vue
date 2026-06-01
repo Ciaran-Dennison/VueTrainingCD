@@ -1,21 +1,29 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const form = ref({
-  firstname: '',
-  lastname: '',
-  birthdate: '',
-  eye_colour: '',
-  email: '',
-  username: '',
-  address1: '',
-  address2: '',
-  address3: '',
-  city: '',
-  county: '',
-  postcode: '',
-  phone: ''
-})
+const defaultForm = {
+    firstname: '',
+    lastname: '',
+    birthdate: '',
+    eye_colour: '',
+    email: '',
+    username: '',
+    address1: '',
+    address2: '',
+    address3: '',
+    city: '',
+    county: '',
+    postcode: '',
+    phone: ''
+}
+
+const form = ref({ ...defaultForm })
+
+function resetForm() {
+    form.value = { ...defaultForm }
+}
+
+const showModal = ref(false)
 
 const handleSubmit = () => {
   let fname = form.value.firstname;
@@ -31,10 +39,14 @@ const handleSubmit = () => {
   let county = form.value.county;
   let postcode = form.value.postcode;
   let phone = form.value.phone;
-  console.log(fname + " " + sname + " " + bday + " " + colour + " " + email + " " + username + " " + add1 + " " + add2 + " " + add3 + " " + city + " " + county + " " + postcode + " " + phone)
-  alert(fname + " " + sname + " " + bday + " " + colour + " " + email + " " + username + " " + add1 + " " + add2 + " " + add3 + " " + city + " " + county + " " + postcode + " " + phone)
+  console.log(fname + " " + sname + " " + bday + " " + colour + " " + email + " " + username + " " + add1 + " " + add2 + " " + add3 + " " + city + " " + county + " " + postcode + " " + phone);
+  showModal.value = true;
 }
 
+function confirmSubmit() {
+    showModal.value = false;
+    resetForm();
+}
 </script>
 
 
@@ -96,6 +108,28 @@ const handleSubmit = () => {
                         </div>
                     </fieldset>
                 </form>
+            </div>
+        </div>
+        <div v-if="showModal" class="modal-overlay">
+            <div class="modal">
+                <h3>Confirm Submission</h3>
+                <p>First Name: {{ form.firstname }}</p>
+                <p>Last Name: {{ form.lastname }}</p>
+                <p>Date of Birth: {{ form.birthdate }}</p>
+                <p>Eye Colour: {{ form.eye_colour }}</p>
+                <p>Email: {{ form.email }}</p>
+                <p>Username: {{ form.username }}</p>
+                <p>Address Line 1: {{ form.address1 }}</p>
+                <p>Address Line 2: {{ form.address2 }}</p>
+                <p>Address Line 3: {{ form.address3 }}</p>
+                <p>City: {{ form.city }}</p>
+                <p>County: {{ form.county }}</p>
+                <p>Postcode: {{ form.postcode }}</p>
+                <p>Phone: {{ form.phone }}</p>
+                <div class="modal-buttons">
+                    <button type="button" @click="showModal = false">Cancel</button>
+                    <button type="button" @click="confirmSubmit">Confirm</button>
+                </div>
             </div>
         </div>
       </body>
@@ -201,6 +235,33 @@ body {
 html {
     background-color: #064179;
     min-height:100vh;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  min-width: 300px;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto; 
+}
+
+css.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 </style>
