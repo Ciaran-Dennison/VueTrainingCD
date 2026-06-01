@@ -1,27 +1,25 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
+
+const isLoading = ref(true)
+
+onMounted(() => {
+  setTimeout(() => {
+    isLoading.value = false
+  }, 3000)
+})
 
 const admin:string = "Admin";
 const user:string = "User";
-var timeoutVar;
-function timeoutFunc() {
-  timeoutVar = setTimeout(showPage, 3000);
-}
-function showPage() {
-  document.getElementById("loader")!.style.display = "none";
-  document.getElementById("sidebarDiv")!.style.display = "block";
-}
-
-
-
 
 </script>
 
 
 
 <template>
-  <html class="sidebar" v-on:load="timeoutFunc()">
-    <div id="loader"></div>
-    <div class="sidebar" id="sidebarDiv">
+  <html class="sidebar">
+    <div v-if="isLoading" id="loader"></div>
+    <div v-show="!isLoading" class="sidebar">
           <div class="sidebar-header">
               <h2>Live Chat</h2>
           </div>
@@ -46,10 +44,6 @@ function showPage() {
 
 
 <style scoped>
-
-#sidebarDiv {
-  display:none
-}
 
 .sidebar {
     width: 250px;
