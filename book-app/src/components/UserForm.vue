@@ -110,29 +110,29 @@ function confirmSubmit() {
                 </form>
             </div>
         </div>
-        <div v-if="showModal" class="modal-overlay">
-            <div class="modal">
-                <h3>Confirm Submission</h3>
-                <p>First Name: {{ form.firstname }}</p>
-                <p>Last Name: {{ form.lastname }}</p>
-                <p>Date of Birth: {{ form.birthdate }}</p>
-                <p>Eye Colour: {{ form.eye_colour }}</p>
-                <p>Email: {{ form.email }}</p>
-                <p>Username: {{ form.username }}</p>
-                <p>Address Line 1: {{ form.address1 }}</p>
-                <p>Address Line 2: {{ form.address2 }}</p>
-                <p>Address Line 3: {{ form.address3 }}</p>
-                <p>City: {{ form.city }}</p>
-                <p>County: {{ form.county }}</p>
-                <p>Postcode: {{ form.postcode }}</p>
-                <p>Phone: {{ form.phone }}</p>
-                <div class="modal-buttons">
-                    <button type="button" @click="showModal = false">Cancel</button>
-                    <button type="button" @click="confirmSubmit">Confirm</button>
-                </div>
+    </body>
+    <div v-if="showModal" class="modal-overlay">
+        <div class="modal">
+            <h3>Confirm Submission</h3>
+            <p>First Name: {{ form.firstname }}</p>
+            <p>Last Name: {{ form.lastname }}</p>
+            <p>Date of Birth: {{ form.birthdate }}</p>
+            <p>Eye Colour: {{ form.eye_colour }}</p>
+            <p>Email: {{ form.email }}</p>
+            <p>Username: {{ form.username }}</p>
+            <p>Address Line 1: {{ form.address1 }}</p>
+            <p>Address Line 2: {{ form.address2 }}</p>
+            <p>Address Line 3: {{ form.address3 }}</p>
+            <p>City: {{ form.city }}</p>
+            <p>County: {{ form.county }}</p>
+            <p>Postcode: {{ form.postcode }}</p>
+            <p>Phone: {{ form.phone }}</p>
+            <div class="modal-buttons">
+                <button type="button" @click="showModal = false">Cancel</button>
+                <button type="button" @click="confirmSubmit">Confirm</button>
             </div>
         </div>
-      </body>
+    </div>
   </html>
 </template>
 
