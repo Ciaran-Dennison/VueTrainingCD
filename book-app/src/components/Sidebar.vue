@@ -82,7 +82,7 @@ const user:string = "User";
 
 #loader {
   position: absolute;
-  left: 8.5%;
+  left: 5%;
   top: 50%;
   z-index: 1;
   width: 120px;

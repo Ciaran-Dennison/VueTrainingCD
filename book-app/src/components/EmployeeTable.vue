@@ -79,48 +79,48 @@ const getSalaries = () => {
             <link rel="stylesheet" type="text/css" href="EmployeeTable.css"/>
         </head>
         <body>
-            <div class="positionCenter">
-            <table border="1">
-                <thead>
-                    <th colspan="7">Employee Details</th>
-                    <tr>
-                        <th>ID No.</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Date of Birth</th>
-                        <th>Start Date</th>
-                        <th>Role</th>
-                        <th>Salary</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="item in paginatedData" :key="item.id">
-                        <td>{{ item.id }}</td>
-                        <td>{{ item.fName }}</td>
-                        <td>{{ item.sName }}</td>
-                        <td>{{ item.birthDate }}</td>
-                        <td>{{ item.startDate }}</td>
-                        <td>{{ item.role }}</td>
-                        <td>{{ item.salary }}</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th scope="row">Totals:</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>{{ getSalaries() }}</td>
-                    </tr>
-                </tfoot>
-            </table>
-            <div class="pagination"> 
-            <button @click="prevPage" :disabled="currentPage === 1">Previous</button>
-            <span class="paginationText">Page: {{ currentPage }} of {{ totalPages }}</span>
-            <button @click="nextPage" :disabled="currentPage === totalPages">Next</button>    
-            </div>
+            <div class="container">
+                <table>
+                    <thead>
+                        <th colspan="7">Employee Details</th>
+                        <tr>
+                            <th>ID No.</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Date of Birth</th>
+                            <th>Start Date</th>
+                            <th>Role</th>
+                            <th>Salary</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="item in paginatedData" :key="item.id">
+                            <td>{{ item.id }}</td>
+                            <td>{{ item.fName }}</td>
+                            <td>{{ item.sName }}</td>
+                            <td>{{ item.birthDate }}</td>
+                            <td>{{ item.startDate }}</td>
+                            <td>{{ item.role }}</td>
+                            <td>{{ item.salary }}</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th scope="row">Totals:</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>{{ getSalaries() }}</td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <div class="pagination"> 
+                <button @click="prevPage" :disabled="currentPage === 1">Previous</button>
+                <span class="paginationText">Page: {{ currentPage }} of {{ totalPages }}</span>
+                <button @click="nextPage" :disabled="currentPage === totalPages">Next</button>    
+                </div>
             </div>
             </body>
     </html>
@@ -135,13 +135,31 @@ body {
 table{
     background-color: white;
     margin: auto;
+    border-collapse: collapse;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 2px #333;
 }
 
-.positionCenter{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+th, td {
+    padding: 10px;
+    width: auto;
+}
+
+tr:nth-child(even) {
+    background-color: whitesmoke;
+}
+
+tr:hover {
+    background-color: #3068a0;
+    color: white;
+}
+
+
+.container{
+    overflow-x: auto;
+    padding-top: 25vh;
+    align-content: center;
 }
 
 button {
@@ -149,14 +167,15 @@ button {
     align-items: center;
     justify-content: center;
     background-color: white;
-    border-color: grey;
     border-radius: 10px;
     height: 30px;
     width: 100px;
     margin: auto;
+    box-shadow: 0 0 5px 2px #333;
 }
 
 .pagination {
+    padding-top: 10px;
     text-align: center;
 }
 
