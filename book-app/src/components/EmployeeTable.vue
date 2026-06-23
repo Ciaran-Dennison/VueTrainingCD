@@ -72,50 +72,43 @@ const getSalaries = () => {
 
 
 <template>
-    <EmployeeTableData/>
     <html>
         <head>
             <title>Employee Table</title>
-            <link rel="stylesheet" type="text/css" href="EmployeeTable.css"/>
         </head>
         <body>
             <div class="container">
-                <table>
-                    <thead>
-                        <th colspan="7">Employee Details</th>
-                        <tr>
-                            <th>ID No.</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Date of Birth</th>
-                            <th>Start Date</th>
-                            <th>Role</th>
-                            <th>Salary</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="item in paginatedData" :key="item.id">
-                            <td>{{ item.id }}</td>
-                            <td>{{ item.fName }}</td>
-                            <td>{{ item.sName }}</td>
-                            <td>{{ item.birthDate }}</td>
-                            <td>{{ item.startDate }}</td>
-                            <td>{{ item.role }}</td>
-                            <td>{{ item.salary }}</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th scope="row">Totals:</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>{{ getSalaries() }}</td>
-                        </tr>
-                    </tfoot>
-                </table>
+                <div class="grid-table">
+
+                        <div class="grid-title">Employee Details</div>
+
+                        <div class="grid-header">ID No.</div>
+                        <div class="grid-header">First Name</div>
+                        <div class="grid-header">Last Name</div>
+                        <div class="grid-header">Date of Birth</div>
+                        <div class="grid-header">Start Date</div>
+                        <div class="grid-header">Role</div>
+                        <div class="grid-header">Salary</div>
+
+                        <template v-for="item in paginatedData" :key="item.id">
+                            <div class="grid-cell">{{ item.id }}</div>
+                            <div class="grid-cell">{{ item.fName }}</div>
+                            <div class="grid-cell">{{ item.sName }}</div>
+                            <div class="grid-cell">{{ item.birthDate }}</div>
+                            <div class="grid-cell">{{ item.startDate }}</div>
+                            <div class="grid-cell">{{ item.role }}</div>
+                            <div class="grid-cell">{{ item.salary }}</div>
+                        </template>
+
+                        <div class="grid-footer">Totals:</div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell">{{ getSalaries() }}</div>
+
+                    </div>
                 <div class="pagination"> 
                 <button @click="prevPage" :disabled="currentPage === 1">Previous</button>
                 <span class="paginationText">Page: {{ currentPage }} of {{ totalPages }}</span>
@@ -132,28 +125,43 @@ body {
     margin: 0 auto;
 }
 
-table{
-    background-color: white;
-    margin: auto;
-    border-collapse: collapse;
-    width: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 5px 2px #333;
+
+
+.grid-table {
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 2px #333;
+  margin: auto;
+  width: fit-content;
 }
 
-th, td {
-    padding: 10px;
-    width: auto;
+.grid-title {
+  grid-column: 1 / 8;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
 }
 
-tr:nth-child(even) {
-    background-color: whitesmoke;
+.grid-header {
+  font-weight: bold;
+  padding: 10px;
+  background-color: #f0f0f0;
+  text-align: center;
 }
 
-tr:hover {
-    background-color: #3068a0;
-    color: white;
+.grid-cell {
+  padding: 10px;
+  text-align: center;
 }
+
+.grid-footer {
+  font-weight: bold;
+  padding: 10px;
+}
+
 
 
 .container{
@@ -163,7 +171,7 @@ tr:hover {
 }
 
 button {
-    display: inline-flexbox;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     background-color: white;
@@ -172,6 +180,21 @@ button {
     width: 100px;
     margin: auto;
     box-shadow: 0 0 5px 2px #333;
+}
+
+.grid-cell:nth-child(14n+8),
+.grid-cell:nth-child(14n+9),
+.grid-cell:nth-child(14n+10),
+.grid-cell:nth-child(14n+11),
+.grid-cell:nth-child(14n+12),
+.grid-cell:nth-child(14n+13),
+.grid-cell:nth-child(14n+14) {
+  background-color: whitesmoke;
+}
+
+.grid-cell:hover {
+  background-color: #3068a0;
+  color: white;
 }
 
 .pagination {

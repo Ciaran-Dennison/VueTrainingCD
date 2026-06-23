@@ -10,8 +10,8 @@
         <title>Homepage</title>
     </head>
     <body>
-        <div>
-        <img src="@/images/audacia_academy_logo.jpg" alt="Academy Logo" width="450" height="300" class="positionCenter">
+        <div class="positionCenter">
+            <img src="@/images/audacia_academy_logo.jpg" alt="Academy Logo" class="logo">
         </div>
     </body>
 </html>
@@ -24,8 +24,22 @@ h1 {
 }
 
 img {
-    display:block;
-    margin: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.positionCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 60px);
+}
+
+.logo {
+  max-width: 450px;
+  width: 100%;
+  height: auto;
 }
 
 body {
@@ -33,11 +47,11 @@ body {
     margin: 0 auto;
 }
 
-.positionCenter{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+.positionCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 60px); /* accounts for navbar height */
 }
 
 html {

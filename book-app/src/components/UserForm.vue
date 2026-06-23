@@ -58,53 +58,77 @@ function confirmSubmit() {
       </head>
       <body>
         <div>
-            <div class="headerFormat">
-                <h1>User Details Form</h1>
+            <div class="outer-div">
+                <div class="headerFormat">
+                    <h1>User Details Form</h1>
+                </div>
             </div>
             <div class="positionCenter">
                 <form id = "userform" @submit.prevent="handleSubmit">
                     <fieldset>
-                        <div>
-                            <label for="firstname">First Name</label> </br> <input class="grey-background" type="text" id="firstname" v-model="form.firstname"/>
-                            </br>
-                            <label for="lastname">Last Name</label> </br> <input class="grey-background" type="text" id="lastname" v-model="form.lastname"/>
-                            </br>
-                            <label for="birthdate">Date of Birth</label> </br> <input class="grey-background" type="date" id="birthdate" v-model="form.birthdate"/>
-                            </br>
-                            <label for="colour">Eye Colour</label> <br> <select class="grey-background" id="colour" v-model="form.eye_colour">
-                                <option value="Blue">Blue</option>
-                                <option value="Green">Green</option>
-                                <option value="Brown">Brown</option>
-                                <option value="Hazel">Hazel</option>
-                                <option value="Grey">Grey</option>
-                                <option value="Red">Red</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="email">Email</label> </br> <input class="grey-background" type="email" id="email" v-model="form.email"/>
-                            </br>
-                            <label for="username">Username</label> </br> <input class="grey-background" type="text" id="username" v-model="form.username"/>
-                            
-                        </div>
-                        <div>
-                            <label for="address1">Address Line 1</label> </br> <input class="grey-background" type="text" id="address1" v-model="form.address1"/>
-                            </br>
-                            <label for="address2">Address Line 2</label> </br> <input class="grey-background" type="text" id="address2" v-model="form.address2"/>
-                            </br>
-                            <label for="address3">Address Line 3</label> </br> <input class="grey-background" type="text" id="address3" v-model="form.address3"/>
-                        </div>
-                        <div>
-                            <label for="city">City/Town</label> </br> <input class="grey-background" type="text" id="city" v-model="form.city"/>  
-                            </br>
-                            <label for="county">County</label> </br> <input class="grey-background" type="text" id="county" v-model="form.county"/> 
-                            </br>
-                            <label for="postcode">Postcode</label> </br> <input class="grey-background" type="text" id="postcode" v-model="form.postcode"/>
-                        </div>
-                        <div>
-                            <label for="phone">Phone Number</label> </br> <input class="grey-background" type="number" id="phone" v-model="form.phone"/>
-                        </div>
-                        <div>
-                            <button type="submit">Submit</button>
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="firstname">First Name</label>
+                                <input class="grey-background" type="text" id="firstname" v-model="form.firstname"/>
+                            </div>
+                            <div class="field">
+                                <label for="lastname">Last Name</label>
+                                <input class="grey-background" type="text" id="lastname" v-model="form.lastname"/>
+                            </div>
+                            <div class="field">
+                                <label for="birthdate">Date of Birth</label>
+                                <input class="grey-background" type="date" id="birthdate" v-model="form.birthdate"/>
+                            </div>
+                            <div class="field">
+                                <label for="colour">Eye Colour</label>
+                                <select class="grey-background" id="colour" v-model="form.eye_colour">
+                                    <option value="Blue">Blue</option>
+                                    <option value="Green">Green</option>
+                                    <option value="Brown">Brown</option>
+                                    <option value="Hazel">Hazel</option>
+                                    <option value="Grey">Grey</option>
+                                    <option value="Red">Red</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="email">Email</label>
+                                <input class="grey-background" type="email" id="email" v-model="form.email"/>
+                            </div>
+                            <div class="field">
+                            <label for="username">Username</label>
+                            <input class="grey-background" type="text" id="username" v-model="form.username"/>
+                            </div>
+                            <div class="field">
+                                <label for="address1">Address Line 1</label>
+                                <input class="grey-background" type="text" id="address1" v-model="form.address1"/>
+                            </div>
+                            <div class="field">
+                                <label for="address2">Address Line 2</label>
+                                <input class="grey-background" type="text" id="address2" v-model="form.address2"/>
+                            </div>
+                            <div class="field">
+                                <label for="address3">Address Line 3</label>
+                                <input class="grey-background" type="text" id="address3" v-model="form.address3"/>
+                            </div>
+                            <div class="field">
+                                <label for="city">City/Town</label>
+                                <input class="grey-background" type="text" id="city" v-model="form.city"/> 
+                            </div> 
+                            <div class="field">
+                                <label for="county">County</label>
+                                <input class="grey-background" type="text" id="county" v-model="form.county"/> 
+                            </div>
+                            <div class="field">
+                                <label for="postcode">Postcode</label>
+                                <input class="grey-background" type="text" id="postcode" v-model="form.postcode"/>
+                            </div>
+                            <div class="field" style="grid-column:1 / -1">
+                                <label for="phone">Phone Number</label>
+                                <input class="grey-background" type="number" id="phone" v-model="form.phone"/>
+                            </div>
+                            <div class="submit-row">
+                                <button type="submit">Submit</button>
+                            </div>
                         </div>
                     </fieldset>
                 </form>
@@ -139,13 +163,20 @@ function confirmSubmit() {
 <style scoped>
 label {
     color: black;
-    display: inline-flexbox;
     width: 20px;
 }
 
 body {
-    display: inline-flexbox;
+    display: block;
     margin: 0 auto;
+}
+
+.outer-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
 }
 
 h1 {
@@ -156,28 +187,17 @@ h1 {
 
 form {
     margin: auto;
-    display: flexbox;
-    width: 275px;
+    width: auto;
     padding: 1em;
     border: 1px solid #cccccc;
     border-radius: 1em;
     background-color: whitesmoke;
 }
 
-div + div {
-    margin-top: 1em;
-}
-
-label span {
-    display: inline-flexbox;
-    text-align: right;
-}
-
 input,
 textarea {
     font: 1em sans-serif;
-    min-width: 250px;
-    box-sizing: flexbox;
+    min-width: 0;
     border: 1px solid #999999;
 }
 
@@ -193,17 +213,12 @@ textarea {
 }
 
 fieldset {
-    min-width: 250px;
+    min-width: 0;
+    width: auto;
     box-sizing: flexbox;
     border: 1px solid #999999;
     margin:auto;
     background-color: white;
-}
-
-button {
-    display: flexbox;
-    margin-top: 20px;
-    margin: auto;
 }
 
 .grey-background {
@@ -220,16 +235,14 @@ body {
 }
 
 .headerFormat {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
+  width: 100%;
+  text-align: center;
 }
 
 .positionCenter{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
 }
 
 html {
@@ -257,11 +270,51 @@ html {
   overflow-y: auto; 
 }
 
-css.modal-buttons {
+.modal-buttons {
   display: flex;
   justify-content: flex-end;
   gap: 0.5rem;
   margin-top: 1rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.field label {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.field input,
+.field select {
+  width: 100%;
+}
+
+.submit-row {
+  grid-column: 2 / 3;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 720px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .submit-row {
+    grid-column: 1;
+    justify-content: flex-end;
+  }
 }
 
 </style>

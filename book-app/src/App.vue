@@ -84,14 +84,16 @@ button {
 }
 
 .sidebar {
-    box-shadow: 5px 0 6px -2px #333;
-    z-index: 1;
-    width: max-content;
+  position: absolute;
+  box-shadow: 5px 0 6px -2px #333;
+  z-index: 1;
+  width: max-content;
 }
 
 .layout {
-    display: flex;
-    min-height: calc(100vh - 60px);
+  position: relative;
+  display: flex;
+  min-height: calc(100vh - 60px);
 }
 
 .mainView {

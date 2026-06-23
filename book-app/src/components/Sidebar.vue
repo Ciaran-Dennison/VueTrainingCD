@@ -18,7 +18,9 @@ const user:string = "User";
 
 <template>
   <html class="sidebar">
-    <div v-if="isLoading" id="loader"></div>
+    <div v-if="isLoading" class="loader-container">
+      <div id="loader"></div>
+    </div>
     <div v-show="!isLoading" class="sidebar">
           <div class="sidebar-header">
               <h2>Live Chat</h2>
@@ -45,11 +47,18 @@ const user:string = "User";
 
 <style scoped>
 
+html.sidebar {
+  position: relative;
+  height: 100vh;
+  width: 250px;
+}
+
 .sidebar {
-    width: 250px;
-    background: #dcedff;
-    color: #333;
-    transition: width 0.3s;
+  width: 250px;
+  height: 100%;
+  background: #dcedff;
+  color: #333;
+  transition: width 0.3s;
 }
 
 .sidebar-header {
@@ -80,14 +89,22 @@ const user:string = "User";
 
 }
 
-#loader {
+.loader-container {
   position: absolute;
-  left: 5%;
   top: 50%;
-  z-index: 1;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.layout {
+  position: relative;
+  display: flex;
+  min-height: calc(100vh - 60px);
+}
+
+#loader {
   width: 120px;
   height: 120px;
-  margin: -76px 0 0 -76px;
   border: 16px solid #f3f3f3;
   border-radius: 50%;
   border-top: 16px solid #3498db;
