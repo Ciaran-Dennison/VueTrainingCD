@@ -5,16 +5,11 @@
 
 
 <template>
-<html>
-    <head>
-        <title>Homepage</title>
-    </head>
-    <body>
+<div class="home">
         <div class="positionCenter">
             <img src="@/images/audacia_academy_logo.jpg" alt="Academy Logo" class="logo">
         </div>
-    </body>
-</html>
+</div>
 </template>
 
 <style scoped>
@@ -42,20 +37,11 @@ img {
   height: auto;
 }
 
-body {
+.home {
     background-color: #064179;
     margin: 0 auto;
+    flex: 1;
+    width: 100%;
 }
 
-.positionCenter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: calc(100vh - 60px); /* accounts for navbar height */
-}
-
-html {
-    background-color: #064179;
-    min-height: 100vh;
-}
 </style>

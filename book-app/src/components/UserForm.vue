@@ -52,11 +52,7 @@ function confirmSubmit() {
 
 
 <template>
-  <html>
-      <head>
-          <title>User Details Form</title>
-      </head>
-      <body>
+  <div class="user-form-page">
         <div>
             <div class="outer-div">
                 <div class="headerFormat">
@@ -134,7 +130,6 @@ function confirmSubmit() {
                 </form>
             </div>
         </div>
-    </body>
     <div v-if="showModal" class="modal-overlay">
         <div class="modal">
             <h3>Confirm Submission</h3>
@@ -157,18 +152,13 @@ function confirmSubmit() {
             </div>
         </div>
     </div>
-  </html>
+</div>
 </template>
 
 <style scoped>
 label {
     color: black;
     width: 20px;
-}
-
-body {
-    display: block;
-    margin: 0 auto;
 }
 
 .outer-div {
@@ -229,9 +219,11 @@ button:hover {
     background-color: grey;
 }
 
-body {
-    background-color: #064179;
-    margin: 0 auto;
+.user-form-page {
+  background-color: #064179;
+  flex: 1;
+  width: 100%;
+  min-height: 100%;
 }
 
 .headerFormat {
@@ -243,11 +235,6 @@ body {
     display: flex;
     justify-content: center;
     padding: 2rem;
-}
-
-html {
-    background-color: #064179;
-    min-height:100vh;
 }
 
 .modal-overlay {
@@ -298,6 +285,7 @@ html {
 .field input,
 .field select {
   width: 100%;
+  height: 1.25rem;
 }
 
 .submit-row {

@@ -72,11 +72,7 @@ const getSalaries = () => {
 
 
 <template>
-    <html>
-        <head>
-            <title>Employee Table</title>
-        </head>
-        <body>
+    <div class="employee-table-page">
             <div class="container">
                 <div class="grid-table">
 
@@ -115,14 +111,15 @@ const getSalaries = () => {
                 <button @click="nextPage" :disabled="currentPage === totalPages">Next</button>    
                 </div>
             </div>
-            </body>
-    </html>
+        </div>
 </template>
 
 <style scoped>
-body {
-    background-color: #064179;
-    margin: 0 auto;
+.employee-table-page {
+  background-color: #064179;
+  flex: 1;
+  width: 100%;
+  min-height: 100%;
 }
 
 
@@ -214,9 +211,6 @@ button:focus {
     background-color: grey;
 }
 
-html {
-    background-color: #064179;
-    min-height:100vh;
-}
+
 
 </style>

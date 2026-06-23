@@ -16,13 +16,13 @@ function toggleSidebar() {
 <template>
     <nav>
         <button @click="toggleSidebar" class="menuButton">
-            <router-view name="sidebar">
-            <div class="container">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </div>
-            </router-view>
+        <router-view name="sidebar">
+            <svg width="25" height="20" viewBox="0 0 25 20">
+            <rect y="0" width="25" height="3" fill="#333"/>
+            <rect y="8" width="25" height="3" fill="#333"/>
+            <rect y="16" width="25" height="3" fill="#333"/>
+            </svg>
+        </router-view>
         </button>
         <router-link to="/" class="link"><button>Home</button></router-link>
         <router-link to="/UserForm" class="link"><button>User Form</button></router-link>
@@ -45,9 +45,13 @@ function toggleSidebar() {
 <style scoped>
 
 
-nav{
-    background-color: #3068a0;
+nav {
+  background-color: #3068a0;
+  display: flex;
+  align-items: center;
+  padding: 0;
 }
+
 
 html {
     background-color: #064179;
@@ -55,50 +59,47 @@ html {
 }
 
 button {
-    display: inline-flexbox;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    border-color: grey;
-    height: 38px;
-    width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-color: grey;
+  height: 38px;
+  width: fit-content;
+  padding: 0 0.75rem;
+  border-radius: 0;
 }
 
-.container {
-    display: inline-flexbox;
-    cursor: pointer;
-}
+
 
 .menuButton {
-    height: fit-content;
-    justify-content: center;
-    vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  width: 38px;
+  padding: 0;
+  margin-right: auto;
 }
 
-.bar1, .bar2, .bar3 {
-    width: 30px;
-    height: 3px;
-    background-color: #333;
-    margin: 6px 0;
-    vertical-align: middle;
-}
+
 
 .sidebar {
   position: absolute;
-  box-shadow: 5px 0 6px -2px #333;
   z-index: 1;
   width: max-content;
 }
 
 .layout {
-  position: relative;
   display: flex;
-  min-height: calc(100vh - 60px);
+  height: calc(100vh - 60px);
 }
 
 .mainView {
-    flex: 1;
-    min-width: 0;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .link:link {
@@ -120,5 +121,7 @@ button {
     color: #646464;
     text-decoration: none;
 }
+
+
 
 </style>
